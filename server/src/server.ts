@@ -21,7 +21,8 @@ app.use(bodyParser.json());
 
 app.use(cors({
     origin: [
-        'http://localhost:4200'
+        'http://localhost:4200',
+        '*'
     ]
 }));
 
@@ -34,11 +35,16 @@ app.get("/", function(req: Request, res: Response) {
     res.send("Hello World!");
 });
 
-app.listen(port, function() {
+async function init(){
+    await new UsersStore().init();
+    await new ProductStore().init();
+}
+
+app.listen(port, async function() {
     console.log(`starting app on port: ${port}`);
     console.log("add user and products");
-    UsersStore.init();
-    ProductStore.init();
+    await init();
+    console.log("started");
 });
 
 export default app;

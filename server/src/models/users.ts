@@ -58,4 +58,8 @@ export class UsersStore {
         }
         return null;
     }
+
+    async init(){
+
+    }
 }
