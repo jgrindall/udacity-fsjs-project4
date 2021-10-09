@@ -2,8 +2,6 @@ import dotenv from "dotenv";
 import {Pool} from "pg";
 import path from "path";
 
-// db postgres://postgres:postgres@udacity1.c7wd8ws5gdn8.us-west-2.rds.amazonaws.com:5432/postgres
-
 dotenv.config({
     path: path.resolve(__dirname, "../.env")
 });
@@ -13,13 +11,13 @@ let POSTGRES_DB: string;
 let POSTGRES_USER: string;
 let POSTGRES_PASSWORD: string;
 
-const AWS = false;
+const AWS = true;
 
 if(AWS){
-    POSTGRES_HOST = "postgres://postgres:postgres@udacity1.c7wd8ws5gdn8.us-west-2.rds.amazonaws.com:5432/postgres";
+    POSTGRES_HOST = "****";
     POSTGRES_DB = "postgres";
     POSTGRES_USER = "postgres";
-    POSTGRES_PASSWORD = "abc";
+    POSTGRES_PASSWORD = "****";
 }
 else{
     POSTGRES_HOST = process.env.POSTGRES_HOST as string;
@@ -32,5 +30,6 @@ export default new Pool({
     host: POSTGRES_HOST,
     database: POSTGRES_DB,
     user: POSTGRES_USER,
-    password: POSTGRES_PASSWORD
+    password: POSTGRES_PASSWORD,
+    port:5432
 });
