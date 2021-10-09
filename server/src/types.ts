@@ -7,9 +7,11 @@ export type Product = {
     price:number;
     description:string;
     fullDescription:string;
-    images:string[];
-    show:boolean;
+    image:string;
+    category?:string;
 }
+
+export type CountedProduct  = Product & { quantity: number };
 
 export type CartItem = {
     product_id: number;

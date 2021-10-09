@@ -6,6 +6,8 @@ import productRoutes from "./handlers/api/products";
 import usersRoutes from "./handlers/api/users";
 import dotenv from "dotenv";
 import path from "path";
+import {UsersStore} from "./models/users";
+import {ProductStore} from "./models/product";
 
 const app: Application = express();
 
@@ -34,6 +36,9 @@ app.get("/", function(req: Request, res: Response) {
 
 app.listen(port, function() {
     console.log(`starting app on port: ${port}`);
+    console.log("add user and products");
+    UsersStore.init();
+    ProductStore.init();
 });
 
 export default app;

@@ -1,47 +1,5 @@
 import {Users} from "../types";
-
-export class UsersStore {
-    constructor() {}
-
-    /**
-     * login. Currently there is no database and just one user.
-     * */
-    async authenticate(username: string, password: string): Promise<Users | null> {
-        if(username === "username" && password === "udac1ty") {
-            return {
-                id:1,
-                username:"username"
-            };
-        }
-        return null;
-    }
-
-}
-
-
-
-/**
- * Represents a user
- */
-
 import client from "../database";
-import bcrypt from "bcrypt";
-
-export type Users = {
-    id: number;
-    firstName: string;
-    lastName: string;
-    password: string;
-};
-
-const validate = (user:Omit<Users, "id">)=>{
-    if(user.firstName && user.firstName && user.password){
-        // ok
-    }
-    else{
-        throw new Error("invalid user");
-    }
-};
 
 const BCRYPT_PASSWORD: string = process.env.BCRYPT_PASSWORD as string;
 const SALT_ROUNDS: string = process.env.SALT_ROUNDS as string;
@@ -79,58 +37,6 @@ export class UsersStore {
             return result.rows[0];
         } catch (e) {
             throw new Error("get user error " + e.message);
-        }
-    }
-
-    /**
-     * delete by id
-     * @param id
-     * @return {Promise<Users>} - the deleted user
-     */
-    async delete(id: number): Promise<Users> {
-        try {
-            const connection = await client.connect();
-            const sql = "delete from users where id = $1 returning *";
-            const result = await connection.query(sql, [id]);
-            await connection.release();
-            return result.rows[0];
-        } catch (e) {
-            throw new Error("del user error " + e.message);
-        }
-    }
-
-    /**
-     * delete by id
-     * @return {Promise<Users>} - the deleted users
-     */
-    async deleteAll(): Promise<Users[]> {
-        try {
-            const connection = await client.connect();
-            const sql = "delete from users returning *";
-            const result = await connection.query(sql);
-            await connection.release();
-            return result.rows;
-        } catch (e) {
-            throw new Error("del users error " + e.message);
-        }
-    }
-
-    /**
-     * create
-     * @param {Omit<Users, id>} user to create
-     * @return {Promise<Users>} - the created user
-     */
-    async create(user: Omit<Users, "id">): Promise<Users> {
-        try {
-            validate(user);
-            const hash = bcrypt.hashSync(user.password + BCRYPT_PASSWORD, parseInt(SALT_ROUNDS));
-            const sql = 'insert into users ("firstName", "lastName", password) values($1, $2, $3) returning *';
-            const connection = await client.connect();
-            const result = await connection.query(sql, [user.firstName, user.lastName, hash]);
-            await connection.release();
-            return result.rows[0];
-        } catch (err) {
-            throw new Error(`Could not add new user. Error: ${err}`);
         }
     }
 
