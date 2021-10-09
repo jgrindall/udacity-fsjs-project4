@@ -11,8 +11,6 @@ export type Product = {
     category?:string;
 }
 
-export type CountedProduct  = Product & { quantity: number };
-
 export type CartItem = {
     product_id: number;
     count:number;
@@ -23,17 +21,10 @@ export type CartItem = {
  */
 export type Cart = CartItem[];
 
-
-/**
- * join Cart item with products
- */
-export type CartItemWithProduct = CartItem & {
-    product: Product
-}
-
 export type Users = {
     id: number;
     username: string;
+    password:string;
 };
 
 export type TokenPayload = {
