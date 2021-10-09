@@ -1,0 +1,47 @@
+.checkout-choice{
+  width:350px;
+  display: flex;
+  text-align: center;
+  margin:auto;
+  margin-top:80px;
+}
+
+.checkout-choice button{
+  min-width: 220px;
+  margin-bottom:16px;
+}
+.checkout-choice mat-card{
+  width: 100%;
+}
+
+mat-label.outer{
+  margin-right: 16px;
+  min-width: 150px;
+  display: inline-block;
+}
+
+mat-form-field:not(.small){
+  min-width: 256px;
+}
+
+.center{
+  margin-top:24px;
+  width:500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+p{
+  text-align: center;
+}
+
+.buttons{
+  text-align: center;
+}
+
+.buttons button{
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+
+

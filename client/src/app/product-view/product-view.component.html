@@ -1,0 +1,53 @@
+<div class="product-view" class="flex-container product-view"
+     fxLayout="row"
+     fxLayout.xs="column">
+  <app-product-card [product]="product" class="view" fxFlex=66>
+    <mat-card-content>
+      <mat-grid-list cols="2" rowHeight="1:1.5" [gutterSize]="'10px'">
+        <mat-grid-tile *ngFor="let image of product!.images">
+          <div class="bg-image" [ngStyle]="{ 'background-image': 'url(' + image + ')'}" [style.background-image]="'url(' + image + ')'"></div>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </mat-card-content>
+  </app-product-card>
+  <div fxFlex=33 class="info">
+    <mat-card class="mat-elevation-z4">
+      <div>{{product!.fullDescription}}</div>
+      <br>
+      <mat-divider></mat-divider>
+      <br>
+      <div style="display:flex;font-size: larger;">
+        <span style="flex:1;    margin-top: 5px;display: inline-block;margin-right: 20px;">&pound;{{product!.price}}</span>
+        <app-star-rating></app-star-rating>
+      </div>
+      <br>
+      <br>
+      <br/>
+      <form #form="ngForm" >
+        <p>Color:</p>
+        <app-color-picker></app-color-picker>
+        <span class="not-done">(This is not implemented)</span>
+        <br>
+        <br>
+        <p>Size:</p>
+        <app-size-picker></app-size-picker>
+        <span class="not-done">(This is not implemented)</span>
+        <br>
+        <br>
+        <mat-form-field appearance="fill">
+          <mat-label>Quantity</mat-label>
+          <input name="count" type="number" matInput [(ngModel)]="count">
+        </mat-form-field>
+
+        <button class="full-width" mat-raised-button color="primary" (click)="onClickAddToCart()">Add to cart</button>
+        <br>
+        <br>
+
+        <a routerLink="/cart">
+          <button [disabled]="!addedToCart" class="full-width" mat-raised-button color="primary" >Go to cart</button>
+        </a>
+
+      </form>
+    </mat-card>
+  </div>
+</div>

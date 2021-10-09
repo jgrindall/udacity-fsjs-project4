@@ -1,0 +1,43 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  padding-top: 75px;
+  font-size: 15px;
+  color:#333;
+  box-sizing: border-box;
+}
+.mat-card-actions{
+  text-align: center;
+}
+
+.full-width{
+  width: 100%;
+}
+
+.mat-card{
+  color:#333;
+}
+
+mat-card-title{
+  color: #3f51b5;
+}
+
+mat-form-field.small{
+  max-width: 120px;
+  margin-right: 16px;
+}
+
+.text-danger{
+  color:#f44336;
+}
+
+.not-done{
+  font-size: smaller;
+  color:#999;
+  margin:12px;
+}

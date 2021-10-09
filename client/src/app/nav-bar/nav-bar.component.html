@@ -1,0 +1,33 @@
+<mat-toolbar color="primary">
+
+  <a routerLink="/">
+    <span>Simple shop</span>
+  </a>
+
+  <span style="flex: 1 1 auto;" class="example-fill-remaining-space"></span>
+
+  <a routerLink="/">
+    <button mat-button>
+      <mat-icon>home</mat-icon>
+      Home
+    </button>
+  </a>
+
+  <a routerLink="/cart">
+    <button mat-button matBadge="{{getBadge()}}" matBadgePosition="after" matBadgeColor="accent">
+      <mat-icon>shopping_cart</mat-icon>
+      Cart
+    </button>
+  </a>
+
+  <button *ngIf="!userLoggedIn" mat-button (click) = "login();">
+    <mat-icon>face</mat-icon>
+    Log in
+  </button>
+
+  <button *ngIf="userLoggedIn" mat-button (click) = "logout();">
+    <mat-icon>logout</mat-icon>
+    Log out
+  </button>
+
+</mat-toolbar>

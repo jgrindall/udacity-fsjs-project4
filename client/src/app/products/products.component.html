@@ -1,0 +1,28 @@
+<div class="products">
+  <div  fxLayout="row"
+        fxLayout.sm="column"
+        fxLayout.xs="column"
+        fxLayoutGap="16px grid" fxFlexFill fxLayoutAlign="center center">
+
+    <div fxFlex="25%" *ngFor="let product of products">
+
+      <app-product-card [product] = "product">
+
+        <mat-card-content class="images">
+          <img mat-card-image [src]="product.images[0]">
+        </mat-card-content>
+
+        <mat-card-actions class="actions">
+
+          <button mat-raised-button color="primary" (click)="onClickView(product.id)">View</button>
+          <button mat-raised-button color="primary" (click)="onClickAddToCart(product)">Add to cart</button>
+
+        </mat-card-actions>
+
+      </app-product-card>
+
+    </div>
+
+  </div>
+</div>
+

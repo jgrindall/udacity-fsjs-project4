@@ -1,0 +1,13 @@
+
+<mat-card *ngIf="product!.show" class="mat-elevation-z4">
+  <mat-card-title>{{product!.title}}</mat-card-title>
+  <br>
+
+  <mat-card-subtitle>	- {{product!.description}}</mat-card-subtitle>
+  <br>
+  <ng-content selector=".images"></ng-content>
+
+  <ng-content selector=".actions"></ng-content>
+
+</mat-card>
+

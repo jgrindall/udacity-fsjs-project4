@@ -1,0 +1,126 @@
+<div *ngIf = "!isLoggedIn" class="checkout-choice">
+
+  <mat-card class="mat-elevation-z4" >
+    <mat-card-actions align="start">
+      <button mat-raised-button color="primary" (click)="onClickSignIn()">Sign in to your account</button>
+      <br/>
+      <button mat-raised-button color="primary" [disabled]="true">Sign up for a new account (this is not implemented)</button>
+    </mat-card-actions>
+  </mat-card>
+
+</div>
+
+<div *ngIf = "isLoggedIn" class="checkout">
+  <form [formGroup]="formGroup" (ngSubmit)="onClickSubmit()">
+  <mat-stepper linear>
+    <mat-step label="Shipping address" [completed]="isCompleted(1)">
+      <div class="center">
+        <mat-label class="outer">Address Line 1</mat-label>
+        <mat-form-field appearance="fill">
+          <mat-label>Address Line 1</mat-label>
+          <input formControlName="address1" matInput required>
+        </mat-form-field>
+        <br/>
+        <br/>
+        <mat-label class="outer">Address Line 2</mat-label>
+        <mat-form-field appearance="fill">
+          <mat-label>Address Line 2</mat-label>
+          <input formControlName="address2" matInput>
+        </mat-form-field>
+        <br/>
+        <br/>
+        <mat-label class="outer">City</mat-label>
+        <mat-form-field appearance="fill">
+          <mat-label>City</mat-label>
+          <input formControlName="city" matInput required >
+        </mat-form-field>
+        <br/>
+        <br/>
+        <mat-label class="outer">State/Province/Region</mat-label>
+        <mat-form-field appearance="fill">
+          <mat-label>State/Province/Region</mat-label>
+          <input formControlName="state" matInput required>
+        </mat-form-field>
+        <br/>
+        <br/>
+        <mat-label class="outer">ZIP/Post code</mat-label>
+        <mat-form-field appearance="fill">
+          <mat-label>ZIP/Post code</mat-label>
+          <input formControlName="zip" matInput required>
+        </mat-form-field>
+        <br/>
+        <br/>
+        <mat-label class="outer">Country</mat-label>
+        <mat-form-field appearance="fill">
+          <mat-label>Country</mat-label>
+          <mat-select formControlName="country" required placeholder="Select">
+            <mat-option *ngFor="let country of countries;" [value]="country">
+              {{country}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <div *ngIf="getErrors(1, true).length >=1">
+          <p class="text-danger" *ngFor="let error of getErrors(1, true)">
+            {{error}}
+          </p>
+        </div>
+
+        <div class="buttons">
+          <button mat-raised-button color="primary" matStepperNext [disabled]="!isCompleted(1)" type="button">Next</button>
+        </div>
+
+      </div>
+    </mat-step>
+    <mat-step label="Confirm & pay" [completed]="isCompleted(2)">
+      <div class="center">
+        <mat-label class="outer">Card number</mat-label>
+        <mat-form-field appearance="fill">
+          <mat-label>Card number</mat-label>
+          <input formControlName="card" matInput required>
+        </mat-form-field>
+        <br/>
+        <br/>
+        <mat-label class="outer">Name on card</mat-label>
+        <mat-form-field appearance="fill">
+          <mat-label>Name on card</mat-label>
+          <input formControlName="name" matInput required >
+        </mat-form-field>
+        <br/>
+        <br/>
+        <mat-label class="outer">Expiration (mm/yyyy)</mat-label>
+        <mat-form-field appearance="fill" class="small">
+          <mat-label>mm</mat-label>
+            <mat-select formControlName="month" placeholder="Select" required>
+              <mat-option *ngFor="let month of months" [value]="month">
+                {{month}}
+              </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="small">
+          <mat-label>yyyy</mat-label>
+            <mat-select formControlName="year" placeholder="Select" required>
+              <mat-option *ngFor="let year of years" [value]="year">
+                {{year}}
+              </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <div *ngIf="getErrors(2, true).length >=1">
+          <p class="text-danger" *ngFor="let error of getErrors(2, true)">
+            {{error}}
+          </p>
+        </div>
+
+        <div class="buttons">
+          <button mat-raised-button color="primary" [disabled]="!isCompleted(1)" matStepperPrevious type="button">Back</button>
+          <button mat-raised-button color="accent" [disabled]="!isCompleted(2)" matStepperNext type="submit">Confirm & Pay</button>
+        </div>
+
+      </div>
+    </mat-step>
+
+  </mat-stepper>
+
+  </form>
+</div>
