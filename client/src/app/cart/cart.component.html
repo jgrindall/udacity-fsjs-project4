@@ -12,7 +12,7 @@
       <div fxFlex="66%" fxFlex.md="100%" class="items">
         <mat-card class="mat-elevation-z4" *ngFor="let item of cartCombinedWithProducts;let _index = index;">
           <div class="imgContainer">
-            <img [src]="item.product.images[0]">
+            <img [src]="item.product.image">
           </div>
           <div style="flex:2">
             <p>{{item.product.title}}</p>

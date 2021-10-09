@@ -33,10 +33,6 @@ export class ProductsComponent implements OnInit, OnDestroy {
 
   }
 
-  onHide(product:Product):void{
-    product.show = false;
-  }
-
   ngOnInit(): void {
     this.subscription = this.productService.productsObs.subscribe((products:Product[])=>{
       this.products = products;

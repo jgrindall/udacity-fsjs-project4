@@ -7,8 +7,8 @@ export type Product = {
   price:number;
   description:string;
   fullDescription:string;
-  images:string[];
-  show:boolean;
+  image:string;
+  category?:string;
 }
 
 export type CartItem = {

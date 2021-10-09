@@ -4,7 +4,7 @@
   <app-product-card [product]="product" class="view" fxFlex=66>
     <mat-card-content>
       <mat-grid-list cols="2" rowHeight="1:1.5" [gutterSize]="'10px'">
-        <mat-grid-tile *ngFor="let image of product!.images">
+        <mat-grid-tile *ngFor="let image of [product!.image, product!.image, product!.image, product!.image]">
           <div class="bg-image" [ngStyle]="{ 'background-image': 'url(' + image + ')'}" [style.background-image]="'url(' + image + ')'"></div>
         </mat-grid-tile>
       </mat-grid-list>
