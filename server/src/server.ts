@@ -4,16 +4,11 @@ import cors from "cors";
 import cartRoutes from "./handlers/api/carts";
 import productRoutes from "./handlers/api/products";
 import usersRoutes from "./handlers/api/users";
-import dotenv from "dotenv";
 import path from "path";
 import {UsersStore} from "./models/users";
 import {ProductStore} from "./models/product";
 
 const app: Application = express();
-
-dotenv.config({
-    path: path.resolve(__dirname, "../.env")
-});
 
 const port: number = process.env.PORT ? parseInt(process.env.PORT as string) : 3000;
 
