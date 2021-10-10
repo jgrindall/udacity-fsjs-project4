@@ -2,4 +2,6 @@ client/node_modules/
 server/node_modules/
 server/dist/
 lib/dist/
-
+client/build
+client/dist/
+node_modules/
