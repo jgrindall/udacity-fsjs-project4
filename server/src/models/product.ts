@@ -30,7 +30,7 @@ export class ProductStore {
             await connection.release();
             return result.rows[0];
         } catch (e) {
-            throw new Error("get products error " + e.message);
+            throw new Error(`get products error ${e}`);
         }
     }
 
