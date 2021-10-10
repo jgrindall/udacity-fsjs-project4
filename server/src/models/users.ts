@@ -1,6 +1,6 @@
 import {Users} from "../types";
 import client from "../database";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 
 const BCRYPT_PASSWORD: string = process.env.BCRYPT_PASSWORD as string;
 const SALT_ROUNDS: string = process.env.SALT_ROUNDS as string;
@@ -37,7 +37,7 @@ export class UsersStore {
             await connection.release();
             return result.rows[0];
         } catch (e) {
-            throw new Error("get user error " + e.message);
+            throw new Error(`get user error ${e}`);
         }
     }
 
