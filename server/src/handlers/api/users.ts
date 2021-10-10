@@ -3,9 +3,12 @@ import {UsersStore} from "../../models/users";
 import jwt from "jsonwebtoken";
 import {CartStore} from "../../models/cart";
 import {TokenPayload, Users, Cart} from "../../types";
+import config from "../../config";
 
 const userStore:UsersStore = new UsersStore();
 const cartStore:CartStore = new CartStore();
+
+const JWT_TOKEN_SECRET:string = config.JWT_TOKEN_SECRET as string;
 
 export default express
     .Router()
@@ -13,7 +16,6 @@ export default express
     // login. Returns the token to be used later.
     .post("/auth", async (req: express.Request, res: express.Response) => {
         const body = req.body as {username: string; password: string, cart?: Cart};
-        const JWT_TOKEN_SECRET: string = process.env.JWT_TOKEN_SECRET as string;
 
         const user: Users | null = await userStore.authenticate(body.username, body.password);
         if(user) {

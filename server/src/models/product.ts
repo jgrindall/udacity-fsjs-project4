@@ -41,7 +41,13 @@ export class ProductStore {
                     returning *`;
 
         const connection = await client.connect();
-        const result = await connection.query(sql, [product.title, product.price, product.description,  product.fullDescription, product.image]);
+        const result = await connection.query(sql, [
+            product.title,
+            product.price,
+            product.description,
+            product.fullDescription,
+            product.image
+        ]);
         await connection.release();
         return result.rows[0];
     }
