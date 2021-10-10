@@ -15,7 +15,7 @@ dotenv.config({
     path: path.resolve(__dirname, "../.env")
 });
 
-const port: number = 3000;
+const port: number = process.env.PORT ? parseInt(process.env.PORT as string) || 3000;
 
 app.use(bodyParser.json());
 
