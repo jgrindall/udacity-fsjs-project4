@@ -4,9 +4,9 @@ import cors from "cors";
 import cartRoutes from "./handlers/api/carts";
 import productRoutes from "./handlers/api/products";
 import usersRoutes from "./handlers/api/users";
-import path from "path";
 import {UsersStore} from "./models/users";
 import {ProductStore} from "./models/product";
+import config from "./config";
 
 const app: Application = express();
 
@@ -16,8 +16,9 @@ app.use(bodyParser.json());
 
 app.use(cors({
     origin: [
-        'http://localhost:4200',
-        '*'
+        '*',
+        'http://jgrindalludacity.s3.us-west-2.amazonaws.com',
+        'https://jgrindalludacity.s3.us-west-2.amazonaws.com'
     ]
 }));
 
@@ -27,7 +28,7 @@ app.use("/api/products/", productRoutes);
 app.use("/api/users/", usersRoutes);
 
 app.get("/", function(req: Request, res: Response) {
-    res.send("Hello World!");
+    res.send(`Hello World! ${config.POSTGRES_HOST} ${config.POSTGRES_DB} ${config.POSTGRES_USER} ${config.POSTGRES_PASSWORD}`);
 });
 
 async function init(){
