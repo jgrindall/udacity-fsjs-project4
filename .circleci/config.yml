@@ -32,3 +32,9 @@ jobs:
               name: clientbuild
               command: |
                   npm run client:build
+                  
+                  
+        - run:
+              name: clientdeploy
+              command: |
+                  npm run client:deploy
