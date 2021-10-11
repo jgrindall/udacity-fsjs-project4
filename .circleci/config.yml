@@ -24,6 +24,11 @@ jobs:
                   echo "hello-world"
                       
         - run:
-              name: client
+              name: clientinstall
               command: |
-                  npm run client
+                  npm run client:install
+                  
+        - run:
+              name: clientbuild
+              command: |
+                  npm run client:build
