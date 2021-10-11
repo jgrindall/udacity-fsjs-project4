@@ -17,7 +17,7 @@ jobs:
       steps:
         - node/install
         - checkout
-        - aws-cli/setup
+        - aws-cli/setup:
               profile-name: deploy-cli
         - run:
               name: hello
