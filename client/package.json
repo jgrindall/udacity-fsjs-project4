@@ -9,7 +9,6 @@
     "test": "ng test",
     "deploy": "chmod +x deploy.sh && ./deploy.sh"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "~12.2.0",
     "@angular/cdk": "^12.2.3",
