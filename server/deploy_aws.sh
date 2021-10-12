@@ -1,5 +1,3 @@
 #!/bin/bash
 
-eb init
-
-eb deploy
+eb deploy jgrindalludacity-dev --profile deploy-cli
