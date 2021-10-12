@@ -1,0 +1,104 @@
+Provide the link to your working Front-End Application in the README
+
+Include a screenshot of your last build in CircleCi
+
+Include screenshots of the configuration page of your AWS services
+
+Connect your GitHub repo to CircleCI
+
+Configure a CircleCI pipeline to automate your deployments
+
+Document the infrastructure needs (RDS, S3 Elastic Beanstalk, etc) and explain the different steps in the pipeline
+
+Create architecture diagrams for an overview of the infrastructure and the pipeline
+
+Your project final project should include the following files and folders:
+
+.circleci/config.yml
+
+a root level package.json
+
+a Readme with some basic documentation
+
+a docs folder to include
+
+	architecture diagram 
+	more detailed documentation files (MD format) on infrastructure description, app dependencies, and pipeline process
+
+Write code that demonstrates parameterized environment variables
+
+No environment variables that change from the development environment and production should be present in the source code.
+
+A central configuration file is used in order to set the environment variables and make them available to the code.
+
+No authentication strings are hard-coded in the source code.
+
+Write a project-level package.json file and organize it properly
+
+A project-level package.json file should contain scripts for running:
+
+	Tests
+
+	Builds
+
+Any new dependencies should be located in the devDependencies section of the package.json.
+
+
+Screenshots of the AWS console indicate that the following services are properly set up, i.e. healthy and accessible:
+
+	AWS RDS for the database
+
+	AWS ElasticBeanstalk (or alternatives like lambda) for the API
+
+	AWS s3 for web hosting
+
+
+
+Trigger a successful pipeline on each push to the main branch
+
+A screenshot of the last build shows that the student’s CircleCi account is authorized to access his/her repo
+on Github and is detecting changes each time he/she is pushing to the main branch.
+
+Optionally, a build status badge is present in the README.md, indicating the current state of the main branch build.
+
+
+config.yml that ensures the build occurs in a logical sequence.
+
+Comments help explain the flow of the pipeline and are straight to the point.
+
+Configure secrets via the Continuous Integration software
+
+All the secrets found in the application are configured inside CircleCi and passed to the production application.
+
+A screenshot of the configuration screen is present to show where secrets were added.
+
+Documenting Deployment Process
+
+Write code that demonstrates a well-organized docs folder
+
+A documentation folder should include separate pages on different topics that cannot be discovered by just quickly glancing at code:
+
+Infrastructure description
+App dependencies
+Pipeline process
+Prepare an architecture diagram to document the deployment flow
+
+The submission contains a simple diagram giving a high-level overview of the infrastructure and another diagram showing the overview of the pipeline.
+
+The diagram Includes the different AWS services used for hosting the following:
+
+DB
+API
+Front-End
+
+A representation of the communication between the services is present in the diagram (ex: arrows between services).
+
+
+
+
+
+
+
+
+
+
