@@ -34,11 +34,7 @@ jobs:
               sudo apt-get install python3-pip python3-dev build-essential
               sudo pip3 install awsebcli
                   
-                  
-        - run:
-              name: clientdeploy
-              command: |
-                  npm run client:deploy_aws
+    
                   
                   
         - run:
@@ -68,3 +64,9 @@ jobs:
               name: clientbuild
               command: |
                   npm run client:build
+                  
+                  
+        - run:
+              name: clientdeploy
+              command: |
+                  npm run client:deploy_aws
