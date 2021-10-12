@@ -38,4 +38,21 @@ jobs:
         - run:
               name: clientdeploy
               command: |
-                  npm run client:deploy
+                  npm run client:deploy_aws
+                  
+                  
+         - run:
+              name: serverinstall
+              command: |
+                  npm run server:install
+                  
+        - run:
+              name: serverbuild
+              command: |
+                  npm run server:build
+                  
+                  
+        - run:
+              name: serverdeploy
+              command: |
+                  npm run server:deploy_aws
