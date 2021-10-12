@@ -6,7 +6,7 @@
   "scripts": {
     "prod": "node dist/server.js",
     "build": "npx tsc",
-    "start": "node src/server.ts",
+    "start": "node dist/server.js",
     "deploy_aws": "chmod +x deploy_aws.sh && ./deploy_aws.sh",
     "deploy": "npm run prod"
   },
