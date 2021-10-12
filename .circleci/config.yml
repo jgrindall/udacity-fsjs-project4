@@ -41,7 +41,7 @@ jobs:
                   npm run client:deploy_aws
                   
                   
-         - run:
+        - run:
               name: serverinstall
               command: |
                   npm run server:install
