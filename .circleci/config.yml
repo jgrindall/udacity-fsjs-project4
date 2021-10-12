@@ -3,6 +3,7 @@ version: 2.1
 orbs:
   node: circleci/node@4.7
   aws-cli: circleci/aws-cli@1.3.1
+  eb: circleci/aws-elastic-beanstalk@1.0.0
 
 workflows:
   build_and_test:
@@ -24,21 +25,7 @@ jobs:
               command: |
                   echo "hello-world"
                       
-        - run:
-              name: clientinstall
-              command: |
-                  npm run client:install
-                  
-        - run:
-              name: clientbuild
-              command: |
-                  npm run client:build
-                  
-                  
-        - run:
-              name: clientdeploy
-              command: |
-                  npm run client:deploy_aws
+        
                   
                   
         - run:
