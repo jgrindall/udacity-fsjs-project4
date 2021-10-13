@@ -1,6 +1,7 @@
 client/node_modules/
 server/node_modules/
 server/dist/**
+!server/dist/.gitkeep
 client/build
 client/dist/
 node_modules/
