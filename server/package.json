@@ -8,7 +8,7 @@
     "build": "npx tsc",
     "start": "node src/server.ts",
     "deploy_aws": "chmod +x deploy_aws.sh && ./deploy_aws.sh",
-    "deploy": "npm run prod"
+    "deploy": "npm run build & npm run prod"
   },
   "author": "jgrindall",
   "license": "ISC",
