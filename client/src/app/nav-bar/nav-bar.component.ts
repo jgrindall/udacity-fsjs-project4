@@ -2,7 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {MatDialog} from "@angular/material/dialog";
 import {LoginComponent} from "../login/login.component";
 import {AuthService} from "../auth.service";
-import {AuthInfo, Cart} from "../types";
+import {AuthInfo} from "../types";
 import {CartService} from "../cart.service";
 import {Subscription} from "rxjs";
 @Component({
