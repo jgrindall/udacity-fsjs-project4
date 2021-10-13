@@ -36,17 +36,7 @@ jobs:
                   
     
                   
-                  
-        - run:
-              name: serverinstall
-              command: |
-                  npm run server:install
-                  
-        - run:
-              name: serverbuild
-              command: |
-                  npm run server:build
-                  
+     
                   
         - run:
               name: serverdeploy
