@@ -58,6 +58,12 @@ jobs:
               name: clientinstall
               command: |
                   npm run client:install
+
+
+        -   run:
+                name: clienttest
+                command: |
+                    npm run client:test
                   
         - run:
               name: clientbuild

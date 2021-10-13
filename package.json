@@ -5,6 +5,7 @@
 		
         "client:install": "cd client && npm i",
 		"client:build": "cd client && npm run build",
+        "client:test": "cd client && npm run test",
 		"client:deploy_aws": "cd client && npm run deploy_aws",
 		
 		"server:install": "cd server && npm i",
