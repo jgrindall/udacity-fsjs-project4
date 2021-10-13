@@ -4,6 +4,7 @@ orbs:
   node: circleci/node@4.7
   aws-cli: circleci/aws-cli@1.3.1
   eb: circleci/aws-elastic-beanstalk@1.0.0
+  browser-tools: circleci/browser-tools@1.2.3
 
 workflows:
   build_and_test:
@@ -18,13 +19,20 @@ jobs:
       steps:
         - node/install
         - checkout
+        - browser-tools/install-chrome
+        - browser-tools/install-chromedriver
+
         - aws-cli/setup:
               profile-name: deploy-cli
         - run:
               name: hello
               command: |
                   echo "hello-world"
-                      
+        -   run:
+              command: |
+                google-chrome --version
+                chromedriver --version
+              name: Check install of chrome driver
                   
         - run:
             name: Installing deployment dependencies
