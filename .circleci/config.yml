@@ -14,7 +14,7 @@ workflows:
 jobs:
    build:
       docker:
-        - image: "cimg/base:stable"
+        - image: "cimg/node:14.18.0"
       steps:
         - node/install
         - checkout
