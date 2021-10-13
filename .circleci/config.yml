@@ -34,9 +34,18 @@ jobs:
               sudo apt-get install python3-pip python3-dev build-essential
               sudo pip3 install awsebcli
                   
-    
+        
+         - run:
+              name: serverinstall
+              command: |
+                  npm run server:install
                   
-     
+        - run:
+              name: serverbuild
+              command: |
+                  npm run server:build
+                  
+
                   
         - run:
               name: serverdeploy

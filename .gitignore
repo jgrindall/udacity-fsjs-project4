@@ -1,6 +1,6 @@
 client/node_modules/
 server/node_modules/
-server/dist/
+server/dist/**
 client/build
 client/dist/
 node_modules/
