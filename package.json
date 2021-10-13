@@ -10,6 +10,7 @@
 		
 		"server:install": "cd server && npm i",
 		"server:build": "cd server && npm run build",
+        "server:test": "cd server && npm run test",
 		"server:deploy_aws": "cd server && npm run deploy_aws"
     }
 }

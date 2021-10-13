@@ -34,13 +34,19 @@ jobs:
                 chromedriver --version
               name: Check install of chrome driver
                   
-        - run:
-            name: Installing deployment dependencies
-            working_directory: /
-            command: |
-              sudo apt-get -y -qq update
-              sudo apt-get install python3-pip python3-dev build-essential
-              sudo pip3 install awsebcli
+        -   run:
+              name: Installing deployment dependencies
+              working_directory: /
+              command: |
+                sudo apt-get install -y xvfb
+
+        -   run:
+                name: Installing deployment dependencies2
+                working_directory: /
+                command: |
+                    sudo apt-get -y -qq update
+                    sudo apt-get install python3-pip python3-dev build-essential
+                    sudo pip3 install awsebcli
                   
         
         - run:
@@ -52,6 +58,12 @@ jobs:
               name: serverbuild
               command: |
                   npm run server:build
+
+                  
+        -   run:
+                name: servertest
+                command: |
+                    npm run server:test
                   
 
                   

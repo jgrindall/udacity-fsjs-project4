@@ -8,7 +8,8 @@
     "build": "npx tsc",
     "start": "node src/server.ts",
     "deploy_aws": "chmod +x deploy_aws.sh && ./deploy_aws.sh",
-    "deploy": "npm run prod"
+    "deploy": "npm run prod",
+     "test": "jasmine-ts --config=jasmine.json"
   },
   "author": "jgrindall",
   "license": "ISC",
