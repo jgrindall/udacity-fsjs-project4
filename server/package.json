@@ -9,11 +9,12 @@
     "start": "node src/server.ts",
     "deploy_aws": "chmod +x deploy_aws.sh && ./deploy_aws.sh",
     "deploy": "npm run prod",
-     "test": "jasmine-ts --config=jasmine.json"
+    "test": "jasmine-ts --config=jasmine.json"
   },
   "author": "jgrindall",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^10.0.0",
     "@types/bcryptjs": "^2.4.2",
     "@types/cors": "^2.8.12",
     "@types/express": "^4.17.9",
