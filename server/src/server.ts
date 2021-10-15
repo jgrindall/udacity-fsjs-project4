@@ -27,8 +27,10 @@ app.use("/api/cart/", cartRoutes);
 app.use("/api/products/", productRoutes);
 app.use("/api/users/", usersRoutes);
 
-app.get("/", function(req: Request, res: Response) {
-    res.send(`Hello World! ${config.POSTGRES_HOST} ${config.POSTGRES_DB} ${config.POSTGRES_USER} ${config.POSTGRES_PASSWORD}`);
+app.get("/", async function(req: Request, res: Response) {
+    const users = await new UsersStore().index();
+    const products = await new ProductStore().index();
+    res.send(`Hello Store! ${config.POSTGRES_HOST} ${config.POSTGRES_DB} ${config.POSTGRES_USER} ${config.POSTGRES_PASSWORD} ${users.length} ${products.length}`);
 });
 
 async function init(){

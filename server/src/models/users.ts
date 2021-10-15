@@ -1,6 +1,7 @@
 import {Users} from "../types";
 import client from "../database";
 import bcrypt from "bcryptjs";
+import defaultUsers from "./defaultUsers";
 
 const BCRYPT_PASSWORD: string = process.env.BCRYPT_PASSWORD as string;
 const SALT_ROUNDS: string = process.env.SALT_ROUNDS as string;
@@ -60,6 +61,24 @@ export class UsersStore {
         return null;
     }
 
+    /**
+     * create
+     * @param {Omit<Users, id>} user to create
+     * @return {Promise<Users>} - the created user
+     */
+    async createUser(user: Omit<Users, "id">): Promise<Users> {
+        try {
+            const hash = bcrypt.hashSync(user.password + BCRYPT_PASSWORD, parseInt(SALT_ROUNDS));
+            const sql = 'insert into users ("username", password) values($1, $2) returning *';
+            const connection = await client.connect();
+            const result = await connection.query(sql, [user.username, hash]);
+            await connection.release();
+            return result.rows[0];
+        } catch (err) {
+            throw new Error(`Could not add new user. Error: ${err}`);
+        }
+    }
+
     async init(){
 
         const sql1 = `drop table if exists users`;
@@ -75,5 +94,12 @@ export class UsersStore {
 
         await connection.query(sql2);
         await connection.release();
+
+        const promises:Promise<Users>[] = defaultUsers.map((user:Omit<Users, "id">) => {
+            return this.createUser(user);
+        });
+        return await Promise.all(promises);
+
+
     }
 }
