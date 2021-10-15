@@ -7,7 +7,7 @@ orbs:
   browser-tools: circleci/browser-tools@1.2.3
 
 workflows:
-  build_and_test:
+  build:
     jobs:
       - build
 
@@ -82,6 +82,7 @@ jobs:
 
         -   run:
                 name: clienttest
+                # headless chrome not working in circle ci at the moment
                 command: |
                     if 0 then
                     	npm run client:test
