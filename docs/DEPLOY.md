@@ -142,19 +142,7 @@ The steps are as follows:
 
 The latest build is shown in the video below:
 
-
-<a href="https://raw.githubusercontent.com/jgrindall/udacity-fsjs-project4/master/docs/images/ci.mp4">
-    <img src="https://raw.githubusercontent.com/jgrindall/udacity-fsjs-project4/master/docs/images/ci3.png">
-<a>
-
-
-
-https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_StartInstance.html
-https://circleci.com/developer/orbs/orb/ware2go/aws-rds
-https://stackoverflow.com/questions/69259774/error-notauthorizederror-operation-denied-on-aws-eb-init
-https://aws.amazon.com/premiumsupport/knowledge-center/ec2-not-auth-launch/
-https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb3-ssh.html
-https://serverfault.com/questions/770749/node-path-on-elastic-beanstalk
-https://medium.com/@shivam_g10/deploying-a-node-js-application-to-aws-elastic-beanstalk-through-cli-b60385ed010f
-https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create_deploy_nodejs_express.html
+<video controls poster="https://raw.githubusercontent.com/jgrindall/udacity-fsjs-project4/master/docs/images/ci3.png">
+     <source src="https://raw.githubusercontent.com/jgrindall/udacity-fsjs-project4/master/docs/images/ci.mp4" type="video/mp4">
+</video>
 
