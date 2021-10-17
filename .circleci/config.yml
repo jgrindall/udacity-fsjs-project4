@@ -63,7 +63,14 @@ jobs:
                 name: serverlist
                 command: |
                     cd server && ls -alh
-                  
+
+
+        -   run:
+                name: serverlist2
+                command: |
+                    cd server/dist && ls -alh
+
+
         -   run:
                 name: servertest
                 command: |
