@@ -25,10 +25,12 @@ It's availability in pgAdmin is shown below:
 - [http://jgrindalludacity-dev.us-west-2.elasticbeanstalk.com/](http://jgrindalludacity-dev.us-west-2.elasticbeanstalk.com/)
 
 
--Hitting the endpoint "/" just echoes the number of users and products in the database.
 
 ![Screenshot](/docs/images/eb1.png)
 ![Screenshot](/docs/images/eb2.png)
+
+-Hitting the endpoint "/" just echoes the number of users and products in the database.
+
 ![Screenshot](/docs/images/eb3.png)
 
 Environment variables are made accessible to node and are configured here:
@@ -105,21 +107,21 @@ The steps are as follows:
 <tr><td>install node js</td><td></td></tr>
 <tr><td>checkout code </td><td></td></tr>
 <tr><td>install chrome and chrome driver</td><td></td></tr>
-<tr><td>run "aws-cli/setup" </td><td>Required for the next steps. profile-name "deploy-cli"  </td></tr>
+<tr><td>run "aws-cli/setup" </td><td>Required for the next steps. <pre>profile-name "deploy-cli"</pre>  </td></tr>
 <tr><td>echo Hello World</td><td>sanity check   </td></tr>
 <tr><td>echo versions of chrome and chrome driver. </td><td> Used when I was trying to get chrome headless to run.   </td></tr>
 <tr><td>install some chrome headless dependencies</td><td></td></tr>
-<tr><td>install awsebcli (Elastic Beanstalk CLI)</td><td>This uses python3 and pip3.<br/> sudo apt-get install python3-pip python3-dev build-essential <br/> sudo pip3 install awsebcli</td></tr>
-<tr><td>install node dependencies for the server.</td><td>See server/package.json. <br/>"cd server && npm i</td></tr>
-<tr><td>compile the server code </td><td>"npx tsc". The tsconfig file is located at server/tsconfig.json</td></tr>
+<tr><td>install awsebcli (Elastic Beanstalk CLI)</td><td>This uses python3 and pip3.<br/> <pre>> sudo apt-get install python3-pip python3-dev build-essential <br/>> sudo pip3 install awsebcli</pre></td></tr>
+<tr><td>install node dependencies for the server.</td><td>See server/package.json. <br/><pre>> cd server && npm i</pre></td></tr>
+<tr><td>compile the server code </td><td><pre>> npx tsc</pre>The tsconfig file is located at server/tsconfig.json</td></tr>
 <tr><td> Run ls -alh   </td><td>Sanity check which files have been created in the 'dist' folder  </td></tr>
-<tr><td>Deploy to EB.   </td><td>> "chmod +x deploy_aws.sh && ./deploy_aws.sh" <br/> The file deploy_aws.sh contains: <br/> eb deploy jgrindalludacity-dev --profile deploy-cli</td></tr>
+<tr><td>Deploy to EB.</td><td><pre> > chmod +x deploy_aws.sh && ./deploy_aws.sh"</pre> <br/> The file deploy_aws.sh contains: <br/> <pre>> eb deploy jgrindalludacity-dev --profile deploy-cli</pre></td></tr>
 <tr><td>healthcheck  </td><td>Make a curl to eb.  </td></tr>
 
 <tr><td>install dependencies for front end.  </td><td>See client/package.json. Angular, material desing, jasmine etc. </td></tr>
 <tr><td>Front end tests   </td><td>"ng test" (commented out, not working)</td></tr>
 <tr><td>Build front end      </td><td>ng build   </td></tr>
-<tr><td>Deloy to S3   </td><td>> "chmod +x deploy_aws.sh && ./deploy_aws.sh" <br/>  The file deploy_aws.sh contains: <br/>  bucketName=jgrindalludacity <br/> profileName=deploy-cli<br/>  aws s3 rm s3://$bucketName --recursive --profile $profileName <br/> aws s3 cp --recursive --acl public-read ./dist/myApp s3://$bucketName/ --profile $profileName</td></tr>
+<tr><td>Deloy to S3   </td><td><pre>> chmod +x deploy_aws.sh && ./deploy_aws.sh</pre> <br/>  The file deploy_aws.sh contains: <br/>  <pre>bucketName=jgrindalludacity <br/>profileName=deploy-cli<br/>aws s3 rm s3://$bucketName --recursive --profile $profileName <br/>aws s3 cp --recursive --acl public-read ./dist/myApp s3://$bucketName/ --profile $profileName</pre></td></tr>
 
 </tbody>
 

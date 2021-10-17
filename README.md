@@ -148,7 +148,7 @@ Note 'http' - https is not configured.
 
 -----
 
-# Deployment
+# CI/Deployment
 
 See:
  
