@@ -80,13 +80,12 @@ jobs:
                   npm run client:install
 
 
-        -   run:
-                name: clienttest
-                # headless chrome not working in circle ci at the moment
-                command: |
-                    if 0 then
-                    	npm run client:test
-                    fi
+
+          # headless chrome not working in circle ci at the moment
+        #-   run:
+                #name: clienttest
+                #command: |
+                    #npm run client:test
 
                   
         - run:
