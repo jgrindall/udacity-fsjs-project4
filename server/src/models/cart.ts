@@ -1,6 +1,5 @@
 import {Cart} from "../types";
 import client from "../database";
-import bcrypt from "bcryptjs";
 
 export class CartStore {
     constructor() {
@@ -14,9 +13,11 @@ export class CartStore {
             const result = await connection.query(sql1, [user_id]);
             await connection.release();
             if(result.rows.length >= 1){
-                result.rows[0].id;
+                return result.rows[0].id;
             }
-            return null;
+            else {
+                return null;
+            }
         }
         catch (e) {
             throw new Error(`get products error ${e}`);
@@ -48,6 +49,7 @@ export class CartStore {
     private async initCartForUser(user_id: number) : Promise<number | null>{
         try {
             const cart_id: number | null = await this.getCartIdForUser(user_id);
+
             const connection = await client.connect();
             if (cart_id === null) {
                 const sql = 'insert into carts (user_id) values($1) returning *';
@@ -70,6 +72,7 @@ export class CartStore {
     async setCartForUser(user_id:number, cart: Cart): Promise<boolean>{
         try {
             const cart_id = await this.initCartForUser(user_id);
+
             // and insert
             const connection = await client.connect();
             const promises = cart.map(item => {
