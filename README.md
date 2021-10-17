@@ -37,10 +37,10 @@ Note 'http' - https is not configured.
 
 - Rudimentary Angular tests are located in these files:
 
-    - [client\src\app\app.component.spec.ts](client\src\app\app.component.spec.ts)
-    - [client\src\app\auth.service.spec.ts](client\src\app\auth.service.spec.ts)
-    - [client\src\app\cart.service.spec.ts](client\src\app\cart.service.spec.ts)
-    - [client\src\app\products.service.spec.ts](client\src\app\products.service.spec.ts)
+    - [client/src/app/app.component.spec.ts](/client/src/app/app.component.spec.ts)
+    - [client/src/app/auth.service.spec.ts](/client/src/app/auth.service.spec.ts)
+    - [client/src/app/cart.service.spec.ts](/client/src/app/cart.service.spec.ts)
+    - [client/src/app/products.service.spec.ts](/client/src/app/products.service.spec.ts)
 
 - These can be run locally using "ng test"
 
