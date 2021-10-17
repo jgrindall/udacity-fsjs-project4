@@ -142,7 +142,19 @@ The steps are as follows:
 
 The latest build is shown in the video below:
 
+<img src="https://raw.githubusercontent.com/jgrindall/udacity-fsjs-project4/master/docs/images/ci3.png"/>
+
+<img src="/images/ci3.png"/>
+
+
 <video controls poster="https://raw.githubusercontent.com/jgrindall/udacity-fsjs-project4/master/docs/images/ci3.png">
      <source src="https://raw.githubusercontent.com/jgrindall/udacity-fsjs-project4/master/docs/images/ci.mp4" type="video/mp4">
 </video>
+
+
+<video controls poster="/docs/images/ci3.png">
+     <source src="/docs/images/ci.mp4" type="video/mp4">
+</video>
+
+
 
