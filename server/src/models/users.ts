@@ -79,20 +79,24 @@ export class UsersStore {
         }
     }
 
+    async destroy(){
+        const sql = `drop table if exists users`;
+        const connection = await client.connect();
+        await connection.query(sql);
+    }
+
     async init(){
 
-        const sql1 = `drop table if exists users`;
         const connection = await client.connect();
-        await connection.query(sql1);
 
-        const sql2 = `create table if not exists users
+        const sql = `create table if not exists users
                          (
                              id                 SERIAL PRIMARY KEY,
                              username           varchar(64),
                              password           varchar(1024)
                          )`;
 
-        await connection.query(sql2);
+        await connection.query(sql);
         await connection.release();
 
         const promises:Promise<Users>[] = defaultUsers.map((user:Omit<Users, "id">) => {

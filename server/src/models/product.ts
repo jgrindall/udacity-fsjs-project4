@@ -52,14 +52,17 @@ export class ProductStore {
         return result.rows[0];
     }
 
+    async destroy():Promise<boolean>{
+        const sql = `drop table if exists products`;
+        const connection = await client.connect();
+        await connection.query(sql);
+        return Promise.resolve(true);
+    }
+
     async init() : Promise<Product[]>{
         try {
-
-            const sql1 = `drop table if exists products`;
             const connection = await client.connect();
-            await connection.query(sql1);
-
-            const sql2 = `create table if not exists products
+            const sql = `create table if not exists products
                          (
                              id              SERIAL PRIMARY KEY,
                              title           varchar(64),
@@ -70,7 +73,7 @@ export class ProductStore {
                              category        varchar(64)
                          )`;
 
-            await connection.query(sql2);
+            await connection.query(sql);
             await connection.release();
 
             const promises:Promise<Product>[] = defaultProducts.map((p:Product) => {

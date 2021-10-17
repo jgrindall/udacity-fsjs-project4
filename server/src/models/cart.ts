@@ -84,29 +84,38 @@ export class CartStore {
             throw new Error(`get cart error ${e}`);
         }
     }
-    async init(){
-        const sql1 = `drop table if exists carts`;
+    async destroy():Promise<boolean>{
         const connection = await client.connect();
-        await connection.query(sql1);
 
-        const sql2 = `drop table if exists cart_items`;
+        const sql = `drop table if exists cart_items`;
+        await connection.query(sql);
+
+        const sql2 = `drop table if exists carts`;
         await connection.query(sql2);
 
-        const sql3 = `create table if not exists carts
+        await connection.release();
+
+        return Promise.resolve(true);
+    }
+    async init(){
+
+        const connection = await client.connect();
+
+        const sql = `create table if not exists carts
                          (
                              id              SERIAL PRIMARY KEY,
                              user_id         integer references users(id) on delete cascade
                          )`;
-        await connection.query(sql3);
+        await connection.query(sql);
 
-        const sql4 = `create table if not exists cart_items
+        const sql2 = `create table if not exists cart_items
                          (
                              id              SERIAL PRIMARY KEY,
                              product_id      integer references products(id) on delete cascade,
                              cart_id         integer references carts(id) on delete cascade,
                              count           integer
                          )`;
-        await connection.query(sql4);
+        await connection.query(sql2);
 
         await connection.release();
     }

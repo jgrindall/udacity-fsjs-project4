@@ -35,10 +35,22 @@ app.get("/", async function(req: Request, res: Response) {
 });
 
 async function init(){
+    console.log("delete carts");
+    await new CartStore().destroy();
+
+    console.log("delete products");
+    await new ProductStore().destroy();
+
+    console.log("delete users");
+    await new UsersStore().destroy();
+
+
     console.log("add users");
     await new UsersStore().init();
+
     console.log("add products");
     await new ProductStore().init();
+
     console.log("add carts");
     await new CartStore().init();
 }
