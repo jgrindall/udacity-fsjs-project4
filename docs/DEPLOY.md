@@ -139,29 +139,10 @@ The steps are as follows:
 
 </table>
 
-[![Alternate Text]({/docs/images/ci3.png})]({/docs/images/ci.mp4} "Video")
+The latest build is shown in the image and video below:
 
-The latest build is shown in the video below:
-
-[/server/.elasticbeanstalk/config.yml](/server/.elasticbeanstalk/config.yml)
+![/docs/images/ci3.png](/docs/images/ci3.png)
 
 [/docs/images/ci.mp4](/docs/images/ci.mp4)
-
-[/docs/images/ci3.png](/docs/images/ci3.png)
-
-<img src="https://raw.githubusercontent.com/jgrindall/udacity-fsjs-project4/master/docs/images/ci3.png"/>
-
-<img src="/images/ci3.png"/>
-
-
-<video markdown="0" controls poster="https://raw.githubusercontent.com/jgrindall/udacity-fsjs-project4/master/docs/images/ci3.png">
-<source markdown="0" src="https://raw.githubusercontent.com/jgrindall/udacity-fsjs-project4/master/docs/images/ci.mp4" type="video/mp4">
-</video>
-
-
-<video markdown="0" controls poster="/docs/images/ci3.png">
-<source markdown="0" src="/docs/images/ci.mp4" type="video/mp4">
-</video>
-
 
 
