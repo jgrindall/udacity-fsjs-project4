@@ -8,6 +8,7 @@ The database can be found at:
 - on port 5432.
 
 ![Screenshot](/docs/images/rds1.png)
+
 ![Screenshot](/docs/images/rds2.png)
 
 It's availability in pgAdmin is shown below:
@@ -21,9 +22,10 @@ It's availability in pgAdmin is shown below:
 
 -The eb environment is called 'jgrindalludacity-dev' and it is available here:
 
--http://jgrindalludacity-dev.us-west-2.elasticbeanstalk.com/
+- [http://jgrindalludacity-dev.us-west-2.elasticbeanstalk.com/](http://jgrindalludacity-dev.us-west-2.elasticbeanstalk.com/)
 
--Hitting the endpoint / just echoes the number of users and products in the database.
+
+-Hitting the endpoint "/" just echoes the number of users and products in the database.
 
 ![Screenshot](/docs/images/eb1.png)
 ![Screenshot](/docs/images/eb2.png)
@@ -36,7 +38,7 @@ Environment variables are made accessible to node and are configured here:
 
 - The EB configuration can be found here:
 
-/server/.elasticbeanstalk/config.yml
+[/server/.elasticbeanstalk/config.yml](/server/.elasticbeanstalk/config.yml)
 
 This file contains the settings for the environment to use, the region and the IAM profile.
 
@@ -82,10 +84,9 @@ Secret keys are configured in circleci:
 
 #### Pipline details
 
-- The main config file is found here: [config.yml](/.circleci/config.yml)    
+- The main config file is found here: [/.circleci/config.yml](/.circleci/config.yml)    
 
 The steps are as follows:
-
 
 
 Create architecture diagram

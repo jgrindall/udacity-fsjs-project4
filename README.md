@@ -11,7 +11,9 @@ The client-side is based off the work done in part 2 of the nanodegree (https://
 
 The working application is found at this address:
 
-http://jgrindalludacity.s3.us-west-2.amazonaws.com/index.html
+[http://jgrindalludacity.s3.us-west-2.amazonaws.com/index.html](http://jgrindalludacity.s3.us-west-2.amazonaws.com/index.html)
+
+
 
 Note 'http' - https is not configured.
 
@@ -35,10 +37,10 @@ Note 'http' - https is not configured.
 
 - Rudimentary Angular tests are located in these files:
 
-    - client\src\app\app.component.spec.ts
-    - client\src\app\auth.service.spec.ts
-    - client\src\app\cart.service.spec.ts
-    - client\src\app\products.service.spec.ts
+    - [client\src\app\app.component.spec.ts](client\src\app\app.component.spec.ts)
+    - [client\src\app\auth.service.spec.ts](client\src\app\auth.service.spec.ts)
+    - [client\src\app\cart.service.spec.ts](client\src\app\cart.service.spec.ts)
+    - [client\src\app\products.service.spec.ts](client\src\app\products.service.spec.ts)
 
 - These can be run locally using "ng test"
 
@@ -49,7 +51,7 @@ Note 'http' - https is not configured.
 - API calls are made to the following:
 
     - http://jgrindalludacity-dev.us-west-2.elasticbeanstalk.com/api (prod)
-    - http://localhost:3000/api (dev
+    - http://localhost:3000/api (dev)
 
 #### To compile and run locally:
 
@@ -80,13 +82,14 @@ Note 'http' - https is not configured.
 - Passwords are encrypted using bcryptjs
 - Any endpoint that accesses a user's cart is protected by JWT. 
 - See also
-    - /server/src/handlers/middleware\auth.ts
+    - [/server/src/handlers/middleware/auth.ts](/server/src/handlers/middleware/auth.ts)
+          
 
 #### Configuration
 
 - Environment variables exist for the following:
     - jwt secret key
-    - bcryptjs and #salt for password hashing. The library used is bcryptjs not bcrypt
+    - bcryptjs and #salt for password hashing. Note that the library used is bcryptjs (which is pure JS and needs no CI compile steo) not bcrypt
     - postgres user/pwd/database names
 
 - These are stored as
@@ -145,4 +148,6 @@ Note 'http' - https is not configured.
 
 # Deployment
 
-    See [/docs/DEPLOY.md](/docs/DEPLOY.md)
+See:
+ 
+[/docs/DEPLOY.md](/docs/DEPLOY.md)
