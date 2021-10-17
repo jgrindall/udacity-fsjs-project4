@@ -1,84 +1,87 @@
-#Introduction
-
-####circleci config
-    
-- See /.circleci/config.yml
-[config.yml](/.circleci/config.yml)    
+#AWS services
 
 
-####AWS RDS
+####RDS
+
+The database can be found at:
+
+- udacity1.c7wd8ws5gdn8.us-west-2.rds.amazonaws.com
+- on port 5432.
+
+![Screenshot](/docs/images/rds1.png)
+![Screenshot](/docs/images/rds2.png)
+
+It's availability in pgAdmin is shown below:
+
+![Screenshot](/docs/images/rds3.png)
+
+
+----
+
+####EB
+
+The eb environment is called 'jgrindalludacity-dev' and it is available here:
+
+http://jgrindalludacity-dev.us-west-2.elasticbeanstalk.com/
+
+Hitting the endpoint / just echoes the number of users and products in the database.
+
+![Screenshot](/docs/images/eb1.png)
+![Screenshot](/docs/images/eb2.png)
+![Screenshot](/docs/images/eb3.png)
+![Screenshot](/docs/images/eb4.png)
 
 
 
-####AWS EB
+
+####S3
+
+The S3 bucket is called "jgrindalludacity"
+
+![Screenshot](/docs/images/s3_1.png)
+![Screenshot](/docs/images/s3_2.png)
 
 
-
-####AWS S3
-
+----
 
 ####IAM user
+
+There is one IAM user with profile called "deploy_cli"
 
 ![Screenshot](/docs/images/iam.png)
 
 
 
+----
 
-####Build
+####CI
 
 ![Screenshot](/docs/images/build.png)
 
+####circleci config
+    
+[config.yml](/.circleci/config.yml)    
+
+Circle ci is connected to the github account https://github.com/jgrindall/
+
+![Screenshot](/docs/images/ci2.png)
+
+Pushing to master on the repo "udacity-fsjs-project4" triggers a build.
+
+Secret keys are configured in circleci:
 
 
-	Connect your GitHub repo to CircleCI
-	
-	Trigger a successful pipeline on each push to the main branch
+![Screenshot](/docs/images/ci1.png)
 
-	A screenshot of the last build shows that the student’s CircleCi account is authorized
-	to access his/her repo
-	on Github and is detecting changes each time he/she is pushing to the main branch.
-	
-	All the secrets found in the application are configured
-	inside CircleCi and passed to the production application.
-	
-	Comments help explain the flow of the pipeline and are straight to the point.
 
+
+####Pipline details
 
 AWS
 
-	Include screenshots of the configuration page of your AWS services
+Explain the different steps in the pipeline
 
-	Document the infrastructure needs (RDS, S3 Elastic Beanstalk, etc) and explain the different steps in the pipeline
-
-	Create architecture diagrams for an overview of the infrastructure and the pipeline
-
-	Screenshots of the AWS console indicate that the following services are properly set up, i.e. healthy and accessible:
-
-
-
-
-
-
-Docs folder to include
-
-	architecture diagram. (arrows between services).
-
-	more detailed documentation files on infrastructure description, app dependencies, and pipeline process
-
-	deployment Process
-
-	Infrastructure description
-		App dependencies
-		Pipeline process
-		Prepare an architecture diagram to document the deployment flow
-
-
-	Simple diagram giving a overview of the infrastructure and another diagram showing the overview of the pipeline.
-
-
-
-
-
+Create architecture diagram
 
 
 
