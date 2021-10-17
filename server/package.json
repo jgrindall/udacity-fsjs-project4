@@ -7,7 +7,8 @@
     "prod": "node dist/server.js",
     "build": "npx tsc",
     "start": "node src/server.ts",
-    "deploy_aws": "chmod +x deploy_aws.sh && ./deploy_aws.sh",
+    "deploy_aws":  "chmod +x deploy_aws.sh   && ./deploy_aws.sh",
+    "healthcheck": "chmod +x healthcheck.sh  && ./healthcheck.sh",
     "deploy": "npm run prod",
     "test": "jasmine-ts --config=jasmine.json"
   },
