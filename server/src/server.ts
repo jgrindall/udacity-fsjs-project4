@@ -18,6 +18,7 @@ app.use(bodyParser.json());
 app.use(cors({
     origin: [
         '*',
+        'http://localhost:4200',
         'http://jgrindalludacity.s3.us-west-2.amazonaws.com',
         'https://jgrindalludacity.s3.us-west-2.amazonaws.com'
     ]
