@@ -115,7 +115,7 @@ The steps are as follows:
 <tr><td>install node dependencies for the server.</td><td>See server/package.json. <br/><pre>> cd server && npm i</pre></td></tr>
 <tr><td>compile the server code </td><td><pre>> npx tsc</pre>The tsconfig file is located at server/tsconfig.json</td></tr>
 <tr><td> Run ls -alh   </td><td>Sanity check which files have been created in the 'dist' folder  </td></tr>
-<tr><td>Deploy to EB.</td><td><pre> > chmod +x deploy_aws.sh && ./deploy_aws.sh"</pre> <br/> The file deploy_aws.sh contains: <br/> <pre>> eb deploy jgrindalludacity-dev --profile deploy-cli</pre></td></tr>
+<tr><td>Deploy to EB.</td><td><pre> > chmod +x deploy_aws.sh && ./deploy_aws.sh"</pre> <br/> The file deploy_aws.sh contains: <br/> <pre> eb deploy jgrindalludacity-dev --profile deploy-cli</pre></td></tr>
 <tr><td>healthcheck  </td><td>Make a curl to eb.  </td></tr>
 
 <tr><td>install dependencies for front end.  </td><td>See client/package.json. Angular, material desing, jasmine etc. </td></tr>
