@@ -103,7 +103,13 @@ jobs:
               command: |
                   npm run server:deploy_aws
                   
-                  
+
+
+        - run:
+              #healthcheck the server
+              name: healthcheck
+              command: |
+                  curl -o /dev/null -w 'GET' http://jgrindalludacity-dev.us-west-2.elasticbeanstalk.com/
                   
         - run:
               #npm i for front end
