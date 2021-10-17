@@ -17,7 +17,7 @@ Note that https is not configured.
 
 ![Screenshot:](http://jgrindalludacity.s3.us-west-2.amazonaws.com/docs/images/app1.png)
 
-
+![Alt text](/docs/images/app1.png)
 
 #Running the app locally
 
@@ -28,30 +28,44 @@ Note that https is not configured.
 	- "npm run build"
 	- "npm run prod"
 	
-	
 - Run the angular app
 
 	 - "cd client"
 	 - "ng serve"	 
 
 
-#Database
+#Database schema
+
+product
+- id
+- title
+- description
+- fullDescription
+- image
+- category
+
+
+user
+ - id
+ - password (hashed)
+ - username
+ 
+ 
+ cart
+ - id
+ - user_id (references user.id)
+ 
+ 
+ cart_items
+ - id
+ - cart_id (references cart.id)
+- product_id (reference product.id)
+- count 
+
 
 
 
 #Client
-
-- tests
-
-
-C:\workspace\udacity\course4\udacity-fsjs-project4\client\src\app\app.component.spec.ts
-C:\workspace\udacity\course4\udacity-fsjs-project4\client\src\app\auth.service.spec.ts
-C:\workspace\udacity\course4\udacity-fsjs-project4\client\src\app\cart.service.spec.ts
-C:\workspace\udacity\course4\udacity-fsjs-project4\client\src\app\products.service.spec.ts
-
-
-- API
-
 
 - The users's shopping cart is held in local storage if they are not logged in.
 
@@ -61,6 +75,21 @@ C:\workspace\udacity\course4\udacity-fsjs-project4\client\src\app\products.servi
 
 - Users can edit their cart and then log in when they want to checkout, or they can log in first and edit their cart.
 
+- Rudimentary Angular tests are located in these files:
+
+    - client\src\app\app.component.spec.ts
+    - client\src\app\auth.service.spec.ts
+    - client\src\app\cart.service.spec.ts
+    - client\src\app\products.service.spec.ts
+
+- These can be run locally using "ng test"
+
+- These are also configured to run in circle ci but the step is commented out
+
+- API calls are made to the following:
+
+    - http://jgrindalludacity-dev.us-west-2.elasticbeanstalk.com/api (prod)
+    - http://localhost:3000/api (dev
 
 
 #Server
