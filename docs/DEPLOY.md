@@ -125,7 +125,7 @@ The steps are as follows:
 <tr><td>compile the server code </td><td><pre>> npx tsc</pre>The tsconfig file is located at server/tsconfig.json</td></tr>
 <tr><td> Run ls -alh   </td><td>Sanity check which files have been created in the 'dist' folder  </td></tr>
 
-<tr><td>Create archive.zip</td><td><pre> > chmod +x archive.sh && ./archive.sh"</pre> <br/> The file archive.sh contains: <br/> <pre>zip -r archive.zip ./</pre><br/>I had some problems getting the 'dist' folder to upload correctly while still being in gitignore. This seems like the easiest solution.</td></tr>
+<tr><td>Create archive.zip</td><td><pre> > chmod +x archive.sh && ./archive.sh"</pre> <br/> The file archive.sh contains: <br/> <pre>zip -r archive.zip ./</pre><br/>I had some problems getting the 'dist' folder to upload correctly while still being in gitignore.<br/> This seems like the easiest solution.</td></tr>
 
 <tr><td>Deploy zip to EB.</td><td><pre> > chmod +x deploy_aws.sh && ./deploy_aws.sh"</pre> <br/> The file deploy_aws.sh contains: <br/> <pre> eb deploy jgrindalludacity-dev --profile deploy-cli</pre></td></tr>
 <tr><td>healthcheck  </td><td>Make a curl to eb.  Check if the response is 200, otherwise exit 1<br/> See server/healthcheck.sh </td></tr>
