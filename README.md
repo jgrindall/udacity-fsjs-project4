@@ -2,7 +2,7 @@
 
 This project contains the client (Angular) and server (Nodejs) for a simple shopping website.
 
-The client-side is based off the previous project in this nanodegree (https://github.com/jgrindall/udacity-fsjs-project3)
+The client-side is based off the work done in part 2 of the nanodegree (https://github.com/jgrindall/udacity-fsjs-project3)
 
 - The built html/css/js files are hosted on Amazon S3.
 - The Nodejs application is hosted on Amazon EB.
@@ -13,14 +13,61 @@ The working application is found at this address:
 
 http://jgrindalludacity.s3.us-west-2.amazonaws.com/index.html
 
-(Note it is currently http not https)
+Note that https is not configured.
+
+![Screenshot:](http://jgrindalludacity.s3.us-west-2.amazonaws.com/docs/images/app1.png)
+
+
+
+#Running the app locally
+
+- Build and start the server:
+
+	- "cd server"
+	- "npm i"
+	- "npm run build"
+	- "npm run prod"
+	
+	
+- Run the angular app
+
+	 - "cd client"
+	 - "ng serve"	 
+
+
+#Database
 
 
 
 #Client
 
+- tests
+
+
+C:\workspace\udacity\course4\udacity-fsjs-project4\client\src\app\app.component.spec.ts
+C:\workspace\udacity\course4\udacity-fsjs-project4\client\src\app\auth.service.spec.ts
+C:\workspace\udacity\course4\udacity-fsjs-project4\client\src\app\cart.service.spec.ts
+C:\workspace\udacity\course4\udacity-fsjs-project4\client\src\app\products.service.spec.ts
+
+
+- API
+
+
+- The users's shopping cart is held in local storage if they are not logged in.
+
+- Once they log in it will be synced with the database.
+
+- Any api calls to the 'cart' are protected by a JWT.
+
+- Users can edit their cart and then log in when they want to checkout, or they can log in first and edit their cart.
+
+
 
 #Server
+
+.env
+jasmine
+
 
 
 #Deployment
