@@ -7,6 +7,7 @@ import usersRoutes from "./handlers/api/users";
 import {UsersStore} from "./models/users";
 import {ProductStore} from "./models/product";
 import config from "./config";
+import {CartStore} from "./models/cart";
 
 const app: Application = express();
 
@@ -34,13 +35,16 @@ app.get("/", async function(req: Request, res: Response) {
 });
 
 async function init(){
+    console.log("add users");
     await new UsersStore().init();
+    console.log("add products");
     await new ProductStore().init();
+    console.log("add carts");
+    await new CartStore().init();
 }
 
 app.listen(port, async function() {
     console.log(`starting app on port: ${port}`);
-    console.log("add user and products");
     await init();
     console.log("started");
 });
