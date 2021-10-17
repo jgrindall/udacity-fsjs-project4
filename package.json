@@ -12,6 +12,7 @@
 		"server:build": "cd server && npm run build",
         "server:test": "cd server && npm run test",
         "server:healthcheck": "cd server && npm run healthcheck",
+        "server:archive": "cd server && npm run archive",
 		"server:deploy_aws": "cd server && npm run deploy_aws"
     }
 }

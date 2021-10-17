@@ -96,6 +96,12 @@ jobs:
                     npm run server:test
                   
 
+        -   run:
+                # create archive
+                name: serverarchive
+                command: |
+                    npm run server:archive
+
                   
         - run:
               # deploy server to eb

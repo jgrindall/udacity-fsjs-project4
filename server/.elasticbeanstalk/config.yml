@@ -3,6 +3,10 @@ branch-defaults:
     environment: jgrindalludacity-dev
   master:
     environment: jgrindalludacity-dev
+
+deploy:
+  artifact: archive.zip
+
 global:
   application_name: jgrindalludacity
   branch: null
@@ -17,3 +21,5 @@ global:
   repository: null
   sc: git
   workspace_type: Application
+
+
