@@ -4,6 +4,8 @@ orbs:
   node: circleci/node@4.7
   aws-cli: circleci/aws-cli@1.3.1
   eb: circleci/aws-elastic-beanstalk@1.0.0
+
+  #for running chrome headless tests (Angular)
   browser-tools: circleci/browser-tools@1.2.3
 
 workflows:
@@ -18,29 +20,41 @@ jobs:
         - image: "cimg/base:stable"
       steps:
         - node/install
+          #checkout repo
         - checkout
+
+        #install tools for chrome headless
         - browser-tools/install-chrome
         - browser-tools/install-chromedriver
 
         - aws-cli/setup:
+              # IAM user info
               profile-name: deploy-cli
+
+
         - run:
+              # test everything is working
               name: hello world!
               command: |
                   echo "hello-world"
+
+
         -   run:
+              # Check install of chrome driver versions.
               command: |
                 google-chrome --version
                 chromedriver --version
               name: Check install of chrome driver
                   
         -   run:
+              # chrome headless needs some weird dependencies.
               name: Installing deployment dependencies for chrome headless
               working_directory: /
               command: |
                 sudo apt-get install -y xvfb
 
         -   run:
+                # install the AWS eb cli
                 name: Installing deployment dependencies - aws eb cli
                 working_directory: /
                 command: |
@@ -50,28 +64,33 @@ jobs:
                   
         
         - run:
+              # npm i for the express server
               name: serverinstall
               command: |
                   npm run server:install
                   
         - run:
+              # tsc for the express server
               name: serverbuild
               command: |
                   npm run server:build
 
         -   run:
+                # check that the files have compiled
                 name: serverlist
                 command: |
                     cd server && ls -alh
 
 
         -   run:
+                # check that the files have compiled
                 name: serverlist2
                 command: |
                     cd server/dist && ls -alh
 
 
         -   run:
+                # run back end tests
                 name: servertest
                 command: |
                     npm run server:test
@@ -79,6 +98,7 @@ jobs:
 
                   
         - run:
+              # deploy server to eb
               name: serverdeploy
               command: |
                   npm run server:deploy_aws
@@ -86,6 +106,7 @@ jobs:
                   
                   
         - run:
+              #npm i for front end
               name: clientinstall
               command: |
                   npm run client:install
@@ -100,12 +121,14 @@ jobs:
 
                   
         - run:
+              # ng build for client
               name: clientbuild
               command: |
                   npm run client:build
                   
                   
         - run:
+              # upload client to s3
               name: clientdeploy
               command: |
                   npm run client:deploy_aws
