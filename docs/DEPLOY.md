@@ -142,10 +142,12 @@ The steps are as follows:
 
 The latest build is shown in the video below:
 
-<movie>
+
+<a href="https://raw.githubusercontent.com/jgrindall/udacity-fsjs-project4/master/docs/images/ci.mp4">
+    <img src="https://raw.githubusercontent.com/jgrindall/udacity-fsjs-project4/master/docs/images/ci3.png">
+<a>
 
 
-Create architecture diagram
 
 https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_StartInstance.html
 https://circleci.com/developer/orbs/orb/ware2go/aws-rds
