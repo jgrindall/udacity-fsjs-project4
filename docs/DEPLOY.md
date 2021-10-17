@@ -66,6 +66,9 @@ There is one IAM user with profile called "deploy_cli"
 ![Screenshot](/docs/images/iam.png)
 
 
+# Infrastructure diagram
+
+![Screenshot](/docs/images/AWS.png)
 
 ----
 
