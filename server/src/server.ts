@@ -31,7 +31,7 @@ app.use("/api/users/", usersRoutes);
 app.get("/", async function(req: Request, res: Response) {
     const users = await new UsersStore().index();
     const products = await new ProductStore().index();
-    res.send(`Hello Store! ${config.POSTGRES_HOST} ${config.POSTGRES_DB} ${config.POSTGRES_USER} ${config.POSTGRES_PASSWORD} ${users.length} ${products.length}`);
+    res.send(`Hello Store! You have ${users.length} user(s) and ${products.length} product(s)`);
 });
 
 async function init(){
