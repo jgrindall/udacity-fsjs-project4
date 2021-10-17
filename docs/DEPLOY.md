@@ -128,12 +128,12 @@ The steps are as follows:
 <tr><td>Create archive.zip</td><td><pre> > chmod +x archive.sh && ./archive.sh"</pre> <br/> The file archive.sh contains: <br/> <pre>zip -r archive.zip ./</pre><br/>I had some problems getting the 'dist' folder to upload correctly while still being in gitignore.<br/> This seems like the easiest solution.</td></tr>
 
 <tr><td>Deploy zip to EB.</td><td><pre> > chmod +x deploy_aws.sh && ./deploy_aws.sh"</pre> <br/> The file deploy_aws.sh contains: <br/> <pre> eb deploy jgrindalludacity-dev --profile deploy-cli</pre></td></tr>
-<tr><td>healthcheck  </td><td>Make a curl to eb.  Check if the response is 200, otherwise exit 1<br/> See server/healthcheck.sh </td></tr>
+<tr><td>healthcheck  </td><td>Make a curl to eb.  Check if the response is 200, otherwise exit 1<br/> See server/healthcheck.sh<br/><pre> curl -s -o /dev/null -I -w "%{http_code}" http://jgrindalludacity-dev.us-west-2.elasticbeanstalk.com/</pre> </td></tr>
 
 <tr><td>install dependencies for front end.  </td><td>See client/package.json. Angular, material desing, jasmine etc. </td></tr>
 <tr><td>Front end tests   </td><td>"ng test" (commented out, not working)</td></tr>
 <tr><td>Build front end      </td><td>ng build   </td></tr>
-<tr><td>Deloy to S3   </td><td><pre>> chmod +x deploy_aws.sh && ./deploy_aws.sh</pre> <br/>  The file deploy_aws.sh contains: <br/>  <pre>bucketName=jgrindalludacity <br/>profileName=deploy-cli<br/>aws s3 rm s3://$bucketName --recursive --profile $profileName <br/>aws s3 cp --recursive --acl public-read ./dist/myApp s3://$bucketName/ --profile $profileName</pre></td></tr>
+<tr><td>Deploy to S3   </td><td><pre>> chmod +x deploy_aws.sh && ./deploy_aws.sh</pre> <br/>  The file deploy_aws.sh contains: <br/>  <pre>bucketName=jgrindalludacity <br/>profileName=deploy-cli<br/>aws s3 rm s3://$bucketName --recursive --profile $profileName <br/>aws s3 cp --recursive --acl public-read ./dist/myApp s3://$bucketName/ --profile $profileName</pre></td></tr>
 
 </tbody>
 
