@@ -86,7 +86,16 @@ Secret keys are configured in circleci:
 
 - The main config file is found here: [/.circleci/config.yml](/.circleci/config.yml)    
 
+I use the following orbs:
+
+- node: circleci/node@4.7
+-   aws-cli: circleci/aws-cli@1.3.1
+ -  eb: circleci/aws-elastic-beanstalk@1.0.0
+- browser-tools: circleci/browser-tools@1.2.3 (for running chrome headless tests in Angular)
+                                                
+
 The steps are as follows:
+
 
 
 Create architecture diagram
