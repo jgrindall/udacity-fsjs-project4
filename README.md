@@ -18,6 +18,8 @@ The working application is found at this address:
 Note 'http' - https is not configured.
 
 ![Screenshot](/docs/images/app1.png)
+![Screenshot](/docs/images/app2.png)
+![Screenshot](/docs/images/app3.png)
 
 -----
 
