@@ -14,8 +14,9 @@ The working application is found at this address:
 [http://jgrindalludacity.s3.us-west-2.amazonaws.com/index.html](http://jgrindalludacity.s3.us-west-2.amazonaws.com/index.html)
 
 
-
-Note 'http' - https is not configured.
+Notes
+- 'http' - https is not configured.
+- /index.html is required at the end of the URL
 
 ![Screenshot](/docs/images/app1.png)
 ![Screenshot](/docs/images/app2.png)
