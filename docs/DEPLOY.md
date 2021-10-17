@@ -1,7 +1,6 @@
-#AWS services
+# AWS services
 
-
-####RDS
+#### RDS
 
 The database can be found at:
 
@@ -18,33 +17,45 @@ It's availability in pgAdmin is shown below:
 
 ----
 
-####EB
+#### EB
 
-The eb environment is called 'jgrindalludacity-dev' and it is available here:
+-The eb environment is called 'jgrindalludacity-dev' and it is available here:
 
-http://jgrindalludacity-dev.us-west-2.elasticbeanstalk.com/
+-http://jgrindalludacity-dev.us-west-2.elasticbeanstalk.com/
 
-Hitting the endpoint / just echoes the number of users and products in the database.
+-Hitting the endpoint / just echoes the number of users and products in the database.
 
 ![Screenshot](/docs/images/eb1.png)
 ![Screenshot](/docs/images/eb2.png)
-![Screenshot](/docs/images/eb3.png)
 ![Screenshot](/docs/images/eb4.png)
 
+Environment variables are made accessible to node and are configured here:
+
+![Screenshot](/docs/images/eb3.png)
 
 
+- The EB configuration can be found here:
 
-####S3
+/server/.elasticbeanstalk/config.yml
+
+This file contains the settings for the environment to use, the region and the IAM profile.
+
+----
+
+#### S3
 
 The S3 bucket is called "jgrindalludacity"
 
 ![Screenshot](/docs/images/s3_1.png)
+
+It has a bucket policy as shown:
+
 ![Screenshot](/docs/images/s3_2.png)
 
 
 ----
 
-####IAM user
+#### IAM user
 
 There is one IAM user with profile called "deploy_cli"
 
@@ -54,14 +65,9 @@ There is one IAM user with profile called "deploy_cli"
 
 ----
 
-####CI
+# circleci pipeline
 
-![Screenshot](/docs/images/build.png)
-
-####circleci config
-    
-[config.yml](/.circleci/config.yml)    
-
+#### github
 Circle ci is connected to the github account https://github.com/jgrindall/
 
 ![Screenshot](/docs/images/ci2.png)
@@ -70,20 +76,19 @@ Pushing to master on the repo "udacity-fsjs-project4" triggers a build.
 
 Secret keys are configured in circleci:
 
-
 ![Screenshot](/docs/images/ci1.png)
 
 
 
-####Pipline details
+#### Pipline details
 
-AWS
+- The main config file is found here: [config.yml](/.circleci/config.yml)    
 
-Explain the different steps in the pipeline
+The steps are as follows:
+
+
 
 Create architecture diagram
-
-
 
 https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_StartInstance.html
 https://circleci.com/developer/orbs/orb/ware2go/aws-rds

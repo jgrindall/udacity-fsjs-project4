@@ -1,4 +1,4 @@
-#Introduction
+# Introduction
 
 This project contains the client (Angular) and server (Nodejs) for a simple shopping website.
 
@@ -19,7 +19,7 @@ Note 'http' - https is not configured.
 
 -----
 
-#Client
+# Client
 
 #### Functionality
 
@@ -31,7 +31,7 @@ Note 'http' - https is not configured.
 
 - Users can edit their cart and then log in when they want to checkout, or they can log in first and edit their cart.
 
-####Tests
+#### Tests
 
 - Rudimentary Angular tests are located in these files:
 
@@ -44,14 +44,14 @@ Note 'http' - https is not configured.
 
 - These are also configured to run in circle ci but the step is commented out - I have managed to get all the chrome headless dependencies installed but I cannot get the tests to run in circleci. See also: https://stackoverflow.com/questions/60304251/unable-to-open-x-display-when-trying-to-run-google-chrome-on-centos-rhel-7-5
 
-####API
+#### API
 
 - API calls are made to the following:
 
     - http://jgrindalludacity-dev.us-west-2.elasticbeanstalk.com/api (prod)
     - http://localhost:3000/api (dev
 
-####To compile and run locally:
+#### To compile and run locally:
 
 - "cd client"
 - "ng serve"	 	 
@@ -61,7 +61,7 @@ Note 'http' - https is not configured.
 
 -----
 
-#Server
+# Server
 
 - API
    
@@ -75,14 +75,14 @@ Note 'http' - https is not configured.
    | api/cart/user/:user_id 	| POST   	| update user's cart   	|
     
 
-####Authentication
+#### Authentication
     
 - Passwords are encrypted using bcryptjs
 - Any endpoint that accesses a user's cart is protected by JWT. 
 - See also
     - /server/src/handlers/middleware\auth.ts
 
-####configuration
+#### Configuration
 
 - Environment variables exist for the following:
     - jwt secret key
@@ -93,12 +93,12 @@ Note 'http' - https is not configured.
     - environment variables in elastic beanstalk (prod)
     - Or in the file server/.env file (dev)
 
-####Tests
+#### Tests
 
 - Some very simple tests are written using jasmine. See the folder /server/spec
 
 
-####Running locally:
+#### Running locally:
 
 - To compile and run locally:
 
@@ -113,9 +113,9 @@ Note 'http' - https is not configured.
 
 -----
 
-#Database schema
+# Database schema
 
-####product
+#### product
 - id
 - title
 - description
@@ -124,18 +124,18 @@ Note 'http' - https is not configured.
 - category
 
 
-####user
+#### user
  - id
  - password (hashed)
  - username
  
  
-####cart
+#### cart
  - id
  - user_id (references user.id)
  
  
-####cart_items
+#### cart_items
  - id
  - cart_id (references cart.id)
 - product_id (reference product.id)
@@ -143,8 +143,6 @@ Note 'http' - https is not configured.
 
 -----
 
-#Deployment
+# Deployment
 
-    See /docs/DEPLOY.md
-    
-   
+    See [/docs/DEPLOY.md](/docs/DEPLOY.md)
