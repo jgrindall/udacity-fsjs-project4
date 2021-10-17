@@ -59,6 +59,10 @@ jobs:
               command: |
                   npm run server:build
 
+        -   run:
+                name: serverlist
+                command: |
+                    cd dist & ls -alh
                   
         -   run:
                 name: servertest
