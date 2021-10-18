@@ -152,4 +152,10 @@ Notes
 
 See:
  
-[/docs/DEPLOY.md](/docs/DEPLOY.md)
+[/docs/INFRASTRUCTURE.md](/docs/INFRASTRUCTURE.md)
+
+[/docs/DEPENDENCIES.md](/docs/DEPENDENCIES.md)
+
+[/docs/PIPELINE.md](/docs/PIPELINE.md)
+
+
