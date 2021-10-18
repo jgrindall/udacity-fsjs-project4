@@ -20,7 +20,7 @@ It's availability in pgAdmin is shown below:
 
 #### EB
 
--The eb environment is called 'jgrindalludacity-dev' and it is available here:
+- The eb environment is called 'jgrindalludacity-dev' and it is available here:
 
 - [http://jgrindalludacity-dev.us-west-2.elasticbeanstalk.com/](http://jgrindalludacity-dev.us-west-2.elasticbeanstalk.com/)
 
@@ -29,7 +29,7 @@ It's availability in pgAdmin is shown below:
 ![Screenshot](/docs/images/eb1.png)
 ![Screenshot](/docs/images/eb2.png)
 
--Hitting the endpoint "/" just echoes the number of users and products in the database.
+- Hitting the endpoint "/" just echoes the number of users and products in the database.
 
 ![Screenshot](/docs/images/eb3.png)
 
@@ -119,7 +119,7 @@ The steps are as follows:
 <tr><td>run "aws-cli/setup" </td><td>Required for the next steps. <pre>profile-name "deploy-cli"</pre>  </td></tr>
 <tr><td>echo Hello World</td><td>sanity check   </td></tr>
 <tr><td>echo versions of chrome and chrome driver. </td><td> Used when I was trying to get chrome headless to run.   </td></tr>
-<tr><td>install some chrome headless dependencies</td><td></td></tr>
+<tr><td>install some chrome headless dependencies</td><td>Ditto</td></tr>
 <tr><td>install awsebcli (Elastic Beanstalk CLI)</td><td>This uses python3 and pip3.<br/> <pre>> sudo apt-get install python3-pip python3-dev build-essential <br/>> sudo pip3 install awsebcli</pre></td></tr>
 <tr><td>install node dependencies for the server.</td><td>See server/package.json. <br/><pre>> cd server && npm i</pre></td></tr>
 <tr><td>compile the server code </td><td><pre>> npx tsc</pre>The tsconfig file is located at server/tsconfig.json</td></tr>

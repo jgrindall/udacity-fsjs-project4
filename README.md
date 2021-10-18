@@ -2,7 +2,7 @@
 
 This project contains the client (Angular) and server (Nodejs) for a simple shopping website.
 
-The client-side is based off the work done in part 2 of the nanodegree (https://github.com/jgrindall/udacity-fsjs-project3)
+The client-side is based on my submission for part 3 of the nanodegree (https://github.com/jgrindall/udacity-fsjs-project3)
 
 - The built html/css/js files are hosted on Amazon S3.
 - The Nodejs application is hosted on Amazon EB.
@@ -28,13 +28,12 @@ Notes
 
 #### Functionality
 
-- The users's shopping cart is held in local storage if they are not logged in.
+- The users's shopping cart is held in local storage if they are not logged in. Once they log in it will be synced with the database. Users can edit their cart and then log in when they want to checkout, or they can log in first and edit their cart.
 
-- Once they log in it will be synced with the database.
+- The default username and password are udacity/udac1ty
 
 - Any api calls to the 'cart' are protected by a JWT.
 
-- Users can edit their cart and then log in when they want to checkout, or they can log in first and edit their cart.
 
 #### Tests
 
@@ -92,7 +91,7 @@ Notes
 
 - Environment variables exist for the following:
     - jwt secret key
-    - bcryptjs and #salt for password hashing. Note that the library used is bcryptjs (which is pure JS and needs no CI compile steo) not bcrypt
+    - bcryptjs and #salt for password hashing. Note that the library used is bcryptjs (which is pure JS and needs no CI compile step) not bcrypt
     - postgres user/pwd/database names
 
 - These are stored as
