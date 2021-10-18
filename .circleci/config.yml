@@ -102,6 +102,10 @@ jobs:
                 command: |
                     npm run server:archive
 
+        -   run:
+                name: "Check environment variables"
+                command: echo ${POSTGRES_HOST}
+
                   
         - run:
               # deploy server to eb
