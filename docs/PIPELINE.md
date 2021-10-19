@@ -16,7 +16,7 @@ Circle ci is connected to the github account https://github.com/jgrindall/
 
 Pushing to master on the repo "udacity-fsjs-project4" triggers a build.
 
-Secret keys are configured in circleci:
+Secret keys are configured in circleci, including environment variables to be passed to EB.
 
 ![Screenshot](/docs/images/ci1.png)
 

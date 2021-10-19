@@ -50,8 +50,7 @@ Also add commit hash
 
 Environment variables are NOT configured in EB, rather they are passed in the deploy_aws section of the ci pipeline (set-env):
 
-![Screenshot](/docs/images/eb4.png)
-
+![Screenshot](/docs/images/eb5.png)
 
 - The EB configuration can be found here:
 
