@@ -51,7 +51,14 @@ The pipeline will install
 - awsebcli
 
 
+
 #### AWS
+
+ - To use the CLI you require:
+    - aws cli
+    - python 3
+    - pip3
+    
  - EB instance: 
     - t2.micro
     - Node.js 14 running on 64bit Amazon Linux 2/5.4.6

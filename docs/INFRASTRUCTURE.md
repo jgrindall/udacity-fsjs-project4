@@ -22,17 +22,6 @@ It's availability in pgAdmin is shown below:
 ----
 
 
-
-
-
-//TODO
-
-Also add commit hash
-
-
-
-
-
 #### EB
 
 - The eb environment is called 'jgrindalludacity-dev' and it is available here:
