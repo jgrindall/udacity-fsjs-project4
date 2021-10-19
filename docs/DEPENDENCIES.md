@@ -1,42 +1,81 @@
+# Dependencies
 
-App dependencies: What modules are your app depending on?
+#### server
 
-It is enough to put the "bigger" elements in a list, like NodeJS, which is essential for your app to run.
+- nodejs  - v14+
+- npm - v6.14 / yarn equivalent
+- tsc - 4.0
+
+packages:
+
+    - typescript - v4.4
+    - jasmine - v3.6
+    - dotenv - v10.0
+     -bcryptjs - v2.4
+    - cors - v2.8
+    - express - v4.17
+    - jsonwebtoken - v8.5
+    - pg - v8.5
 
 
-Please add more elements, that without you can not install your dependencies (npm), and don't forget the database software!
+#### client
 
+- nodejs  - v14+
+- npm - v6.14 / yarn equivalent
+- tsc - 4.0
 
+packages:
 
-
-
-server
-
-
-- typescript "^4.4.3"
-- jasmine ^3.6.4",
-- node >=14
-- dotenv "^10.0.0",
-
+    - angular - v12
+    - angular/route - v12
+    - moment
+    - typescript - v4.3
+    - rxjs - v6.6
+    - angularcli - v12.2
+    - jasmine  - v3.8
+    - karma - v6.3
  
-bcryptjs "^2.4.3",
-cors "^2.8.5",
-express  "^4.17.1",
-jsonwebtoken "^8.5.1",
-pg "^8.5.1",
+#### CI
+
+- circle ci - v2.1
+    - orbs:
+        - node: circleci/node@4.7
+        - aws-cli: circleci/aws-cli@1.3.1
+        - eb: circleci/aws-elastic-beanstalk@1.0.0
+        - browser-tools: circleci/browser-tools@1.2.3
+   
+The pipeline will install
+
+- google-chrome
+- chromedriver
+- awsebcli
 
 
-----------
+#### AWS
+ - EB instance: 
+    - t2.micro
+    - Node.js 14 running on 64bit Amazon Linux 2/5.4.6
+    
+- IAM
+    - profile-name: deploy-cli  
+    - AmazonEC2FullAccess
+    - AmazonS3FullAccess
+    - AdministratorAccess-AWSElasticBeanstalk
+    
+- S3 bucket
+    - Public read allowed
+    - Static website hosting enabled
 
-client
+- RDS
+    - us-west-2
+    - db.t3.micro
+    - Engine: PostgreSQL
 
-- angular >= 12
-@angular/route >=12
-moment
-- typescript "^4.3.5"
-    "rxjs": "~6.6.0",
 
-angularcli "~12.2.3",
- jasmine 3.8
- karma 6.3
+#### local database
+
+ - postgres v13.3+ (https://www.postgresql.org/)
+ - pgadmin v4+ (optional)
+ - Database called 'udacity_fsjs_project4'
+ - User configured according to .env file.
  
