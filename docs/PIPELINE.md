@@ -37,6 +37,8 @@ I use the following orbs:
 The steps are as follows:
 
 
+![Screenshot](/docs/images/ci.png)
+
 
 <table>
 <thead><tr><td>Step</td><td>Details</td></tr></thead>
